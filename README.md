@@ -41,9 +41,9 @@ pages:
   ^p/:
     layout: post
     author:
-		 login: User
-		 avatar: 'https://www.gravatar.com/avatar/400caf343d3bab57ab93f63e21a12be7?s=24'
-     link: https://cogearjs.org
+    	login: User
+	avatar: 'https://www.gravatar.com/avatar/400caf343d3bab57ab93f63e21a12be7?s=24'
+	link: https://cogearjs.org
 ```
 # Usage
 
