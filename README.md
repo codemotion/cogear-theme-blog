@@ -1,7 +1,7 @@
 # Cogear.JS theme **blog**
 
 
-![screenshot](screenshot.jpg)
+![screenshot](https://github.com/codemotion/cogear-theme-blog/raw/master/screenshot.jpg)
 
 Theme with blog posts on the home page.
 
