@@ -1,0 +1,22 @@
+if paginator
+	#paginator
+		//- pre!= JSON.stringify(paginator)
+		if paginator.prev !== null
+			a(href=`/${paginator.prev}`) &larr; Prev
+		#paginator-pages
+			- let page = 2
+			a(href=`/${paginator.baseUri}`)= 1
+			while page <= paginator.total
+				- let range = 2
+				if page == 1 || page == paginator.total || (page >= paginator.current - range && page <= paginator.current + range)
+					if page == paginator.current
+						a.current(href=`${paginator.baseUri}/${page}`)= page
+					else
+						a(href=`${paginator.baseUri}/${page}`)= page
+				else if paginator.current < paginator.total - range && page == paginator.total - 1
+					a.ellipsis …
+				else if paginator.current > 1+range && page == range
+					a.ellipsis …
+				- page=page+1
+		if paginator.next !== null
+			a(href=`/${paginator.next}`) Next &rarr;

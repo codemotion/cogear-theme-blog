@@ -1,0 +1,9 @@
+{
+	"name": "cogear-theme-blog",
+	"description": "Cogear Blog theme",
+	"version": "1.0.0",
+	"author": "Dmitriy Beliaev",
+	"repository": "https://github.com/codemotion/cogear-theme-blog",
+  "homepage": "https://github.com/codemotion/cogear-theme-blog",
+  "license": "MIT"
+}

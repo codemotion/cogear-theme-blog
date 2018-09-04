@@ -1,0 +1,31 @@
+include includes/mixins
+head
+	block head
+		title= title
+	meta(content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1" name="viewport")
+	link(rel="shortcut icon" href="/favicon.png" type="image/png")
+body
+	.navbar
+		.container
+			.brand
+				a(href="/") Blog
+			if cogear.blog.tags
+				ul
+					each t in cogear.blog.tags
+						- tName = t[0].toUpperCase() + t.slice(1)
+						if tag && t == tag
+							li.active: a(href=`/${cogear.config.blog.tagUri}/${t}`)= tName
+						else
+							li: a(href=`/${cogear.config.blog.tagUri}/${t}`)= tName
+					if title=='About'
+						li.active: a(href="/about") About
+					else
+						li: a(href="/about") About
+	.container
+		main#content
+			block content
+		include sidebar
+	footer
+		block footer
+			#copyleft 🚀 Produly powered by <a href="https://cogearjs.org">Cogear.JS</a> &copy; 2018
+	//- != content

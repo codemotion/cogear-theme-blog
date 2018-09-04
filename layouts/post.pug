@@ -1,0 +1,10 @@
+extends layout.pug
+block content
+	+post({
+			title:title,
+			teaser: false,
+			tags:tags,
+			content:content,
+			date:date,
+			author: author
+		})

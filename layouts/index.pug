@@ -1,0 +1,19 @@
+extends layout.pug
+block head
+	if tag
+		- tagName = tag[0].toUpperCase() + tag.slice(1)
+		- title= `${tagName} | ${title}`
+	if paginator && paginator.current > 1
+		- title = `Page ${paginator.current} | ${title}`
+	title= title
+block content
+	if tag
+		h1.tag= tagName
+	if content
+		article.page!= content
+	else if posts
+		each post in posts
+			+post(post)
+		include paginator
+	else
+		include includes/empty

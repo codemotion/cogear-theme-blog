@@ -1,0 +1,20 @@
+mixin post(post)
+	article.post(class=`${post.teaser ? 'teaser' : 'full'}`)
+		.post-meta
+			.post-meta--author
+				a(href=`${post.author.link}`): img(src=`${post.author.avatar}`)
+				a(href=`${post.author.link}`)= post.author.login
+			+date(post.date)
+		header
+			if post.teaser
+				h2: a(href=`/${post.uri}`)= post.title
+			else
+				h1= post.title
+		.post-content!= post.teaser ? post.teaser : post.content
+		if !post.teaser
+			a(href="javascript: history.back()") &larr; Back
+mixin date(date)
+	- let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+	- let d = new Date(date)
+	- month = months[d.getMonth()] 
+	time= `${month} ${d.getDate()}`

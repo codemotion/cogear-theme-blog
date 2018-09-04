@@ -1,0 +1,13 @@
+head
+	title=title
+	link(rel="shortcut icon" href="/favicon.png" type="image/png")
+body
+	.navbar
+		.container
+			.brand
+				a(href="/") Blog
+			if cogear.blog.tags
+				ul
+					each t in cogear.blog.tags
+						- tName = t[0].toUpperCase() + t.slice(1)
+						li: a(href=`/tags/${t}`)= tName
