@@ -11,7 +11,7 @@ block content
 		h1.tag= tagName
 	if content
 		article.page!= content
-	else if posts
+	else if posts.length
 		each post in posts
 			+post(post)
 		include paginator
